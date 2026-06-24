@@ -63,8 +63,10 @@
                         <td>{{ mascota.propietario }}</td>
                         <td>{{ mascota.telefono_propietario|default:"Sin registrar" }}</td>
                         <td class="text-end">
-                            <a class="btn btn-sm btn-outline-primary" href="{% url 'editar_mascota' mascota.id %}">Editar</a>
-                            <a class="btn btn-sm btn-outline-danger" href="{% url 'eliminar_mascota' mascota.id %}">Eliminar</a>
+                            <div class="admin-actions">
+                                <a class="btn btn-sm btn-outline-primary" href="{% url 'editar_mascota' mascota.id %}">Editar</a>
+                                <a class="btn btn-sm btn-outline-danger" href="{% url 'eliminar_mascota' mascota.id %}">Eliminar</a>
+                            </div>
                         </td>
                     </tr>
                 {% endfor %}

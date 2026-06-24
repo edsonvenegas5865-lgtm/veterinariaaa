@@ -19,7 +19,7 @@
 
 <form method="post" class="d-flex flex-wrap gap-2">
     {% csrf_token %}
-    <button type="submit" class="btn btn-danger">Eliminar</button>
-    <a href="{% url 'mascotas' %}" class="btn btn-outline-secondary">Cancelar</a>
+    <button type="submit" class="btn btn-danger">Si, eliminar</button>
+    <a href="{% url 'mascotas' %}" class="btn btn-light border">Cancelar</a>
 </form>
 {% endblock %}

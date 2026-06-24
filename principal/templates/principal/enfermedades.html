@@ -57,8 +57,10 @@
                         <td>{{ enfermedad.descripcion|default:"Sin registrar"|truncatechars:60 }}</td>
                         <td>{{ enfermedad.sintomas|default:"Sin registrar"|truncatechars:60 }}</td>
                         <td class="text-end">
-                            <a class="btn btn-sm btn-outline-primary" href="{% url 'editar_enfermedad' enfermedad.id %}">Editar</a>
-                            <a class="btn btn-sm btn-outline-danger" href="{% url 'eliminar_enfermedad' enfermedad.id %}">Eliminar</a>
+                            <div class="admin-actions">
+                                <a class="btn btn-sm btn-outline-primary" href="{% url 'editar_enfermedad' enfermedad.id %}">Editar</a>
+                                <a class="btn btn-sm btn-outline-danger" href="{% url 'eliminar_enfermedad' enfermedad.id %}">Eliminar</a>
+                            </div>
                         </td>
                     </tr>
                 {% endfor %}
