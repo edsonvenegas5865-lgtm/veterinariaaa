@@ -9,6 +9,9 @@
         <h1 class="fw-bold mb-2">Mascotas</h1>
         <p class="text-muted mb-0">Listado de pacientes registrados en la clinica.</p>
     </div>
+    <div class="align-self-md-end">
+        <a class="btn btn-primary" href="{% url 'crear_mascota' %}">Registrar mascota</a>
+    </div>
 </section>
 
 {% if mascotas %}

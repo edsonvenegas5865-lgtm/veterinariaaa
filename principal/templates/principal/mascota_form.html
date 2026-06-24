@@ -1,0 +1,30 @@
+{% extends 'principal/base.html' %}
+
+{% block title %}Registrar Mascota - Clinica Veterinaria{% endblock %}
+
+{% block content %}
+<section class="mb-4">
+    <span class="badge badge-suave rounded-pill px-3 py-2 mb-3">Area privada</span>
+    <h1 class="fw-bold mb-2">Registrar mascota</h1>
+    <p class="text-muted mb-0">Completa los datos del paciente y su propietario.</p>
+</section>
+
+<form method="post" class="row g-3">
+    {% csrf_token %}
+
+    {% for field in form %}
+        <div class="col-md-6">
+            <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field }}
+            {% if field.errors %}
+                <div class="text-danger small mt-1">{{ field.errors|striptags }}</div>
+            {% endif %}
+        </div>
+    {% endfor %}
+
+    <div class="col-12 d-flex gap-2">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="{% url 'mascotas' %}" class="btn btn-outline-secondary">Cancelar</a>
+    </div>
+</form>
+{% endblock %}

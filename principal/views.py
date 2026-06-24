@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 
+from .forms import MascotaForm
 from .models import Mascota
 
 
@@ -33,3 +34,16 @@ def mascotas(request):
         'principal/mascotas.html',
         {'mascotas': mascotas_registradas},
     )
+
+
+@login_required
+def crear_mascota(request):
+    if request.method == 'POST':
+        form = MascotaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('mascotas')
+    else:
+        form = MascotaForm()
+
+    return render(request, 'principal/mascota_form.html', {'form': form})
