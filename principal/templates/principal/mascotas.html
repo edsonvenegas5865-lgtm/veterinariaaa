@@ -73,7 +73,12 @@
     </div>
 {% else %}
     <div class="admin-empty p-4 text-center">
-        Aun no hay mascotas registradas. Puedes iniciar con el boton Registrar mascota.
+        <div class="admin-empty-icon">M</div>
+        <h2 class="h5 fw-bold text-dark">No hay mascotas registradas</h2>
+        <p class="mb-3">
+            Cuando registres pacientes, apareceran aqui para consultar, editar o eliminar.
+        </p>
+        <a class="btn btn-primary" href="{% url 'crear_mascota' %}">Registrar primera mascota</a>
     </div>
 {% endif %}
 {% endblock %}

@@ -67,7 +67,12 @@
     </div>
 {% else %}
     <div class="admin-empty p-4 text-center">
-        Aun no hay enfermedades registradas. Puedes iniciar con el boton Registrar enfermedad.
+        <div class="admin-empty-icon">E</div>
+        <h2 class="h5 fw-bold text-dark">No hay enfermedades registradas</h2>
+        <p class="mb-3">
+            El catalogo de enfermedades se mostrara aqui cuando agregues el primer registro.
+        </p>
+        <a class="btn btn-primary" href="{% url 'crear_enfermedad' %}">Registrar primera enfermedad</a>
     </div>
 {% endif %}
 {% endblock %}
