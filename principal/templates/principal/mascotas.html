@@ -4,9 +4,9 @@
 {% block header %}Gestion de mascotas{% endblock %}
 
 {% block content %}
-<section class="d-flex flex-column flex-md-row justify-content-between gap-3 mb-4">
+<section class="admin-page-title d-flex flex-column flex-md-row justify-content-between gap-3">
     <div>
-        <span class="badge badge-suave rounded-pill px-3 py-2 mb-3">Area privada</span>
+        <span class="badge admin-pill rounded-pill px-3 py-2 mb-3">Modulo administrativo</span>
         <h1 class="fw-bold mb-2">Mascotas</h1>
         <p class="text-muted mb-0">Listado de pacientes registrados en la clinica.</p>
     </div>
@@ -17,22 +17,22 @@
 
 <section class="row g-3 mb-4">
     <div class="col-md-4">
-        <div class="metric-card h-100 p-4">
-            <span class="icono-redondo mb-3">R</span>
+        <div class="admin-stat h-100 p-4">
+            <span class="admin-icon mb-3">R</span>
             <h2 class="h6 text-muted">Registro</h2>
             <p class="mb-0 fw-semibold">Datos del paciente y propietario</p>
         </div>
     </div>
     <div class="col-md-4">
-        <div class="metric-card h-100 p-4">
-            <span class="icono-redondo mb-3">E</span>
+        <div class="admin-stat h-100 p-4">
+            <span class="admin-icon mb-3">E</span>
             <h2 class="h6 text-muted">Edicion</h2>
             <p class="mb-0 fw-semibold">Actualizacion rapida de informacion</p>
         </div>
     </div>
     <div class="col-md-4">
-        <div class="metric-card h-100 p-4">
-            <span class="icono-redondo mb-3">S</span>
+        <div class="admin-stat h-100 p-4">
+            <span class="admin-icon mb-3">S</span>
             <h2 class="h6 text-muted">Seguimiento</h2>
             <p class="mb-0 fw-semibold">Base para control clinico</p>
         </div>
@@ -40,8 +40,8 @@
 </section>
 
 {% if mascotas %}
-    <div class="table-responsive">
-        <table class="table table-hover align-middle">
+    <div class="admin-table table-responsive">
+        <table class="table table-hover align-middle mb-0">
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -72,7 +72,7 @@
         </table>
     </div>
 {% else %}
-    <div class="alert alert-light border mb-0">
+    <div class="admin-empty p-4 text-center">
         Aun no hay mascotas registradas. Puedes iniciar con el boton Registrar mascota.
     </div>
 {% endif %}

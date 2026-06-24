@@ -4,7 +4,7 @@
 {% block header %}Panel principal{% endblock %}
 
 {% block content %}
-<section class="panel-hero p-4 p-md-5 mb-4 d-flex align-items-end">
+<section class="admin-hero p-4 p-md-5 mb-4">
     <div>
         <span class="badge bg-light text-dark rounded-pill px-3 py-2 mb-3">Area privada</span>
         <h1 class="fw-bold mb-2">Hola, {{ request.user.username }}</h1>
@@ -16,22 +16,22 @@
 
 <section class="row g-3 mb-4">
     <div class="col-md-4">
-        <div class="metric-card h-100 p-4">
-            <span class="icono-redondo mb-3">M</span>
+        <div class="admin-stat h-100 p-4">
+            <span class="admin-icon mb-3">M</span>
             <h2 class="h6 text-muted">Modulo activo</h2>
             <p class="h4 fw-bold mb-0">Mascotas</p>
         </div>
     </div>
     <div class="col-md-4">
-        <div class="metric-card h-100 p-4">
-            <span class="icono-redondo mb-3">E</span>
+        <div class="admin-stat h-100 p-4">
+            <span class="admin-icon mb-3">E</span>
             <h2 class="h6 text-muted">Seguimiento</h2>
             <p class="h4 fw-bold mb-0">Enfermedades</p>
         </div>
     </div>
     <div class="col-md-4">
-        <div class="metric-card h-100 p-4">
-            <span class="icono-redondo mb-3">A</span>
+        <div class="admin-stat h-100 p-4">
+            <span class="admin-icon mb-3">A</span>
             <h2 class="h6 text-muted">Administracion</h2>
             <p class="h4 fw-bold mb-0">Usuarios</p>
         </div>
@@ -40,8 +40,8 @@
 
 <section class="row g-4">
     <div class="col-md-4">
-        <a class="tarjeta-servicio h-100 p-4 d-block text-decoration-none text-reset" href="/admin/auth/user/">
-            <span class="icono-redondo mb-3">U</span>
+        <a class="admin-action p-4" href="/admin/auth/user/">
+            <span class="admin-icon mb-3">U</span>
             <h2 class="h5 fw-semibold">Usuarios</h2>
             <p class="text-muted">
                 Administra usuarios, permisos y accesos desde Django Admin.
@@ -50,8 +50,8 @@
         </a>
     </div>
     <div class="col-md-4">
-        <a class="tarjeta-servicio h-100 p-4 d-block text-decoration-none text-reset" href="{% url 'mascotas' %}">
-            <span class="icono-redondo mb-3">P</span>
+        <a class="admin-action p-4" href="{% url 'mascotas' %}">
+            <span class="admin-icon mb-3">M</span>
             <h2 class="h5 fw-semibold">Mascotas</h2>
             <p class="text-muted">
                 Registra, edita, consulta y elimina pacientes de la clinica.
@@ -60,8 +60,8 @@
         </a>
     </div>
     <div class="col-md-4">
-        <a class="tarjeta-servicio h-100 p-4 d-block text-decoration-none text-reset" href="{% url 'enfermedades' %}">
-            <span class="icono-redondo mb-3">C</span>
+        <a class="admin-action p-4" href="{% url 'enfermedades' %}">
+            <span class="admin-icon mb-3">E</span>
             <h2 class="h5 fw-semibold">Enfermedades</h2>
             <p class="text-muted">
                 Mantiene ordenado el catalogo de enfermedades, sintomas y tratamientos.

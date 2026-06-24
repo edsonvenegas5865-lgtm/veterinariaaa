@@ -4,8 +4,8 @@
 {% block header %}{% if enfermedad %}Editar enfermedad{% else %}Registrar enfermedad{% endif %}{% endblock %}
 
 {% block content %}
-<section class="mb-4">
-    <span class="badge badge-suave rounded-pill px-3 py-2 mb-3">Area privada</span>
+<section class="admin-page-title">
+    <span class="badge admin-pill rounded-pill px-3 py-2 mb-3">Formulario administrativo</span>
     <h1 class="fw-bold mb-2">{% if enfermedad %}Editar enfermedad{% else %}Registrar enfermedad{% endif %}</h1>
     <p class="text-muted mb-0">Completa la informacion clinica de la enfermedad.</p>
 </section>
@@ -23,7 +23,7 @@
         </div>
     {% endfor %}
 
-    <div class="col-12 d-flex gap-2">
+    <div class="col-12 d-flex flex-wrap gap-2 pt-3 border-top">
         <button type="submit" class="btn btn-primary">Guardar</button>
         <a href="{% url 'enfermedades' %}" class="btn btn-outline-secondary">Cancelar</a>
     </div>
