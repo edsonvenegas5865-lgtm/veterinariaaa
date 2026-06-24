@@ -1,6 +1,7 @@
-{% extends 'principal/base.html' %}
+{% extends 'principal/base_admin.html' %}
 
 {% block title %}{% if mascota %}Editar{% else %}Registrar{% endif %} Mascota - Clinica Veterinaria{% endblock %}
+{% block header %}{% if mascota %}Editar mascota{% else %}Registrar mascota{% endif %}{% endblock %}
 
 {% block content %}
 <section class="mb-4">

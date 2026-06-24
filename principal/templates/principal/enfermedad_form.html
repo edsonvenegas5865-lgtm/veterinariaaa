@@ -1,6 +1,7 @@
-{% extends 'principal/base.html' %}
+{% extends 'principal/base_admin.html' %}
 
 {% block title %}{% if enfermedad %}Editar{% else %}Registrar{% endif %} Enfermedad - Clinica Veterinaria{% endblock %}
+{% block header %}{% if enfermedad %}Editar enfermedad{% else %}Registrar enfermedad{% endif %}{% endblock %}
 
 {% block content %}
 <section class="mb-4">
