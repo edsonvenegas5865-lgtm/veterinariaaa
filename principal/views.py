@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 from .forms import EnfermedadForm, MascotaForm
 from .models import Enfermedad, Mascota
@@ -42,7 +43,9 @@ def crear_mascota(request):
         form = MascotaForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Mascota registrada correctamente.')
             return redirect('mascotas')
+        messages.error(request, 'Revisa los datos del formulario.')
     else:
         form = MascotaForm()
 
@@ -57,7 +60,9 @@ def editar_mascota(request, mascota_id):
         form = MascotaForm(request.POST, instance=mascota)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Mascota actualizada correctamente.')
             return redirect('mascotas')
+        messages.error(request, 'Revisa los datos del formulario.')
     else:
         form = MascotaForm(instance=mascota)
 
@@ -70,6 +75,7 @@ def eliminar_mascota(request, mascota_id):
 
     if request.method == 'POST':
         mascota.delete()
+        messages.success(request, 'Mascota eliminada correctamente.')
         return redirect('mascotas')
 
     return render(request, 'principal/mascota_confirmar_eliminar.html', {'mascota': mascota})
@@ -91,7 +97,9 @@ def crear_enfermedad(request):
         form = EnfermedadForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Enfermedad registrada correctamente.')
             return redirect('enfermedades')
+        messages.error(request, 'Revisa los datos del formulario.')
     else:
         form = EnfermedadForm()
 
@@ -106,7 +114,9 @@ def editar_enfermedad(request, enfermedad_id):
         form = EnfermedadForm(request.POST, instance=enfermedad)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Enfermedad actualizada correctamente.')
             return redirect('enfermedades')
+        messages.error(request, 'Revisa los datos del formulario.')
     else:
         form = EnfermedadForm(instance=enfermedad)
 
@@ -123,6 +133,7 @@ def eliminar_enfermedad(request, enfermedad_id):
 
     if request.method == 'POST':
         enfermedad.delete()
+        messages.success(request, 'Enfermedad eliminada correctamente.')
         return redirect('enfermedades')
 
     return render(
