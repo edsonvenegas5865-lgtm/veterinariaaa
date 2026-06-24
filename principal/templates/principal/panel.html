@@ -1,0 +1,41 @@
+{% extends 'principal/base.html' %}
+
+{% block title %}Panel Principal - Clinica Veterinaria{% endblock %}
+
+{% block content %}
+<section class="mb-4">
+    <span class="badge badge-suave rounded-pill px-3 py-2 mb-3">Area privada</span>
+    <h1 class="fw-bold mb-2">Panel principal</h1>
+    <p class="lead text-muted mb-0">
+        Bienvenido, {{ request.user.username }}. Desde aqui se gestionaran los
+        modulos internos de la clinica veterinaria.
+    </p>
+</section>
+
+<section class="row g-4">
+    <div class="col-md-4">
+        <div class="tarjeta-servicio h-100 p-4">
+            <h2 class="h5 fw-semibold">Usuarios</h2>
+            <p class="text-muted mb-0">
+                Administracion de usuarios con acceso al sistema.
+            </p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="tarjeta-servicio h-100 p-4">
+            <h2 class="h5 fw-semibold">Mascotas</h2>
+            <p class="text-muted mb-0">
+                Registro y consulta de pacientes de la clinica.
+            </p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="tarjeta-servicio h-100 p-4">
+            <h2 class="h5 fw-semibold">Enfermedades</h2>
+            <p class="text-muted mb-0">
+                Control de enfermedades y seguimiento clinico.
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock %}
