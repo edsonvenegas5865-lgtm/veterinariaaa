@@ -1,0 +1,46 @@
+{% extends 'principal/base.html' %}
+
+{% block title %}Mascotas - Clinica Veterinaria{% endblock %}
+
+{% block content %}
+<section class="d-flex flex-column flex-md-row justify-content-between gap-3 mb-4">
+    <div>
+        <span class="badge badge-suave rounded-pill px-3 py-2 mb-3">Area privada</span>
+        <h1 class="fw-bold mb-2">Mascotas</h1>
+        <p class="text-muted mb-0">Listado de pacientes registrados en la clinica.</p>
+    </div>
+</section>
+
+{% if mascotas %}
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Especie</th>
+                    <th>Raza</th>
+                    <th>Edad</th>
+                    <th>Propietario</th>
+                    <th>Telefono</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for mascota in mascotas %}
+                    <tr>
+                        <td class="fw-semibold">{{ mascota.nombre }}</td>
+                        <td>{{ mascota.especie }}</td>
+                        <td>{{ mascota.raza|default:"Sin registrar" }}</td>
+                        <td>{{ mascota.edad }}</td>
+                        <td>{{ mascota.propietario }}</td>
+                        <td>{{ mascota.telefono_propietario|default:"Sin registrar" }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% else %}
+    <div class="alert alert-info mb-0">
+        Aun no hay mascotas registradas.
+    </div>
+{% endif %}
+{% endblock %}
