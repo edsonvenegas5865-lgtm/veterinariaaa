@@ -1,0 +1,21 @@
+{% extends 'principal/base.html' %}
+
+{% block title %}Eliminar Mascota - Clinica Veterinaria{% endblock %}
+
+{% block content %}
+<section class="mb-4">
+    <span class="badge badge-suave rounded-pill px-3 py-2 mb-3">Area privada</span>
+    <h1 class="fw-bold mb-2">Eliminar mascota</h1>
+    <p class="text-muted mb-0">Confirma si deseas eliminar este registro.</p>
+</section>
+
+<div class="alert alert-warning">
+    Vas a eliminar a <strong>{{ mascota.nombre }}</strong>. Esta accion no se puede deshacer.
+</div>
+
+<form method="post" class="d-flex gap-2">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a href="{% url 'mascotas' %}" class="btn btn-outline-secondary">Cancelar</a>
+</form>
+{% endblock %}

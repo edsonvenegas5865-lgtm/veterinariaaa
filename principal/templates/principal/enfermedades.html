@@ -1,0 +1,48 @@
+{% extends 'principal/base.html' %}
+
+{% block title %}Enfermedades - Clinica Veterinaria{% endblock %}
+
+{% block content %}
+<section class="d-flex flex-column flex-md-row justify-content-between gap-3 mb-4">
+    <div>
+        <span class="badge badge-suave rounded-pill px-3 py-2 mb-3">Area privada</span>
+        <h1 class="fw-bold mb-2">Enfermedades</h1>
+        <p class="text-muted mb-0">Listado de enfermedades registradas para seguimiento clinico.</p>
+    </div>
+    <div class="align-self-md-end">
+        <a class="btn btn-primary" href="{% url 'crear_enfermedad' %}">Registrar enfermedad</a>
+    </div>
+</section>
+
+{% if enfermedades %}
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Sintomas</th>
+                    <th class="text-end">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for enfermedad in enfermedades %}
+                    <tr>
+                        <td class="fw-semibold">{{ enfermedad.nombre }}</td>
+                        <td>{{ enfermedad.descripcion|default:"Sin registrar"|truncatechars:60 }}</td>
+                        <td>{{ enfermedad.sintomas|default:"Sin registrar"|truncatechars:60 }}</td>
+                        <td class="text-end">
+                            <a class="btn btn-sm btn-outline-primary" href="{% url 'editar_enfermedad' enfermedad.id %}">Editar</a>
+                            <a class="btn btn-sm btn-outline-danger" href="{% url 'eliminar_enfermedad' enfermedad.id %}">Eliminar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% else %}
+    <div class="alert alert-info mb-0">
+        Aun no hay enfermedades registradas.
+    </div>
+{% endif %}
+{% endblock %}

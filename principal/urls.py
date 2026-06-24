@@ -13,4 +13,10 @@ urlpatterns = [
     path('panel/', views.panel, name='panel'),
     path('mascotas/', views.mascotas, name='mascotas'),
     path('mascotas/crear/', views.crear_mascota, name='crear_mascota'),
+    path('mascotas/<int:mascota_id>/editar/', views.editar_mascota, name='editar_mascota'),
+    path('mascotas/<int:mascota_id>/eliminar/', views.eliminar_mascota, name='eliminar_mascota'),
+    path('enfermedades/', views.enfermedades, name='enfermedades'),
+    path('enfermedades/crear/', views.crear_enfermedad, name='crear_enfermedad'),
+    path('enfermedades/<int:enfermedad_id>/editar/', views.editar_enfermedad, name='editar_enfermedad'),
+    path('enfermedades/<int:enfermedad_id>/eliminar/', views.eliminar_enfermedad, name='eliminar_enfermedad'),
 ]

@@ -12,3 +12,14 @@ class Mascota(models.Model):
 
     def __str__(self):
         return self.nombre
+
+
+class Enfermedad(models.Model):
+    nombre = models.CharField(max_length=100)
+    descripcion = models.TextField(blank=True)
+    sintomas = models.TextField(blank=True)
+    tratamiento = models.TextField(blank=True)
+    fecha_registro = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.nombre

@@ -25,6 +25,7 @@
                     <th>Edad</th>
                     <th>Propietario</th>
                     <th>Telefono</th>
+                    <th class="text-end">Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,6 +37,10 @@
                         <td>{{ mascota.edad }}</td>
                         <td>{{ mascota.propietario }}</td>
                         <td>{{ mascota.telefono_propietario|default:"Sin registrar" }}</td>
+                        <td class="text-end">
+                            <a class="btn btn-sm btn-outline-primary" href="{% url 'editar_mascota' mascota.id %}">Editar</a>
+                            <a class="btn btn-sm btn-outline-danger" href="{% url 'eliminar_mascota' mascota.id %}">Eliminar</a>
+                        </td>
                     </tr>
                 {% endfor %}
             </tbody>
