@@ -11,3 +11,7 @@ def acerca(request):
 
 def ubicacion(request):
     return render(request, 'principal/ubicacion.html')
+
+
+def contactos(request):
+    return render(request, 'principal/contactos.html')
