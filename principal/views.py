@@ -7,3 +7,7 @@ def inicio(request):
 
 def acerca(request):
     return render(request, 'principal/acerca.html')
+
+
+def ubicacion(request):
+    return render(request, 'principal/ubicacion.html')
