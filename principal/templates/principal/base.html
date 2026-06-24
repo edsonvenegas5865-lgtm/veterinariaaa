@@ -40,6 +40,20 @@
             opacity: 1;
         }
 
+        .btn-salir {
+            background: transparent;
+            border: 0;
+            color: #ffffff;
+            font-weight: 500;
+            opacity: 0.92;
+            padding: 0.5rem;
+        }
+
+        .btn-salir:hover {
+            color: #fff3c4;
+            opacity: 1;
+        }
+
         .navbar-toggler {
             border-color: rgba(255, 255, 255, 0.55);
         }
@@ -103,9 +117,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'contactos' %}">Contactos</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}">Login</a>
-                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'panel' %}">Panel</a>
+                        </li>
+                        <li class="nav-item">
+                            <form method="post" action="{% url 'logout' %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn-salir">Salir</button>
+                            </form>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">Login</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
