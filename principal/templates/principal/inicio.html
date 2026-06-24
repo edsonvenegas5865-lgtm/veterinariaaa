@@ -3,19 +3,35 @@
 {% block title %}Inicio - Clinica Veterinaria{% endblock %}
 
 {% block content %}
-<section class="text-center py-4">
-    <h1 class="display-5 fw-semibold mb-3">Clinica Veterinaria</h1>
-    <p class="lead text-muted mb-4">
-        Cuidamos la salud y el bienestar de tus mascotas con atencion responsable,
-        cercana y profesional.
-    </p>
-    <a href="#" class="btn btn-primary btn-lg">Conoce nuestros servicios</a>
+<section class="row align-items-center g-4 py-3">
+    <div class="col-lg-7">
+        <span class="badge badge-suave rounded-pill px-3 py-2 mb-3">Atencion veterinaria integral</span>
+        <h1 class="display-4 fw-bold mb-3">Cuidamos a tus mascotas como parte de tu familia</h1>
+        <p class="lead text-muted mb-4">
+            Una clinica veterinaria moderna, organizada y cercana para acompanarte
+            en cada etapa de la salud de tus mascotas.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+            <a href="{% url 'contactos' %}" class="btn btn-primary btn-lg">Agendar consulta</a>
+            <a href="{% url 'acerca' %}" class="btn btn-outline-secondary btn-lg">Conocer la clinica</a>
+        </div>
+    </div>
+    <div class="col-lg-5">
+        <div class="bg-light rounded-4 p-4 text-center border">
+            <div class="display-1 mb-3">🐾</div>
+            <h2 class="h4 fw-semibold">Salud, prevencion y seguimiento</h2>
+            <p class="text-muted mb-0">
+                Gestionamos informacion importante para ofrecer una atencion mas clara,
+                ordenada y confiable.
+            </p>
+        </div>
+    </div>
 </section>
 
-<section class="row g-4 mt-4">
+<section class="row g-4 mt-5">
     <div class="col-md-4">
-        <div class="h-100 border rounded p-4">
-            <h2 class="h5">Atencion medica</h2>
+        <div class="tarjeta-servicio h-100 p-4">
+            <h2 class="h5 fw-semibold">Atencion medica</h2>
             <p class="mb-0 text-muted">
                 Consultas veterinarias para prevenir, diagnosticar y tratar enfermedades
                 comunes en mascotas.
@@ -23,8 +39,8 @@
         </div>
     </div>
     <div class="col-md-4">
-        <div class="h-100 border rounded p-4">
-            <h2 class="h5">Registro de mascotas</h2>
+        <div class="tarjeta-servicio h-100 p-4">
+            <h2 class="h5 fw-semibold">Registro de mascotas</h2>
             <p class="mb-0 text-muted">
                 Gestion organizada de informacion basica de pacientes, propietarios y
                 antecedentes relevantes.
@@ -32,8 +48,8 @@
         </div>
     </div>
     <div class="col-md-4">
-        <div class="h-100 border rounded p-4">
-            <h2 class="h5">Seguimiento clinico</h2>
+        <div class="tarjeta-servicio h-100 p-4">
+            <h2 class="h5 fw-semibold">Seguimiento clinico</h2>
             <p class="mb-0 text-muted">
                 Control de enfermedades y datos importantes para mejorar la continuidad
                 de la atencion veterinaria.
