@@ -1,11 +1,12 @@
-{% extends 'principal/base.html' %}
+{% extends 'principal/base_admin.html' %}
 
 {% block title %}Enfermedades - Clinica Veterinaria{% endblock %}
+{% block header %}Gestion de enfermedades{% endblock %}
 
 {% block content %}
-<section class="d-flex flex-column flex-md-row justify-content-between gap-3 mb-4">
+<section class="admin-page-title d-flex flex-column flex-md-row justify-content-between gap-3">
     <div>
-        <span class="badge badge-suave rounded-pill px-3 py-2 mb-3">Area privada</span>
+        <span class="badge admin-pill rounded-pill px-3 py-2 mb-3">Modulo administrativo</span>
         <h1 class="fw-bold mb-2">Enfermedades</h1>
         <p class="text-muted mb-0">Listado de enfermedades registradas para seguimiento clinico.</p>
     </div>
@@ -16,22 +17,22 @@
 
 <section class="row g-3 mb-4">
     <div class="col-md-4">
-        <div class="metric-card h-100 p-4">
-            <span class="icono-redondo mb-3">D</span>
+        <div class="admin-stat h-100 p-4">
+            <span class="admin-icon mb-3">D</span>
             <h2 class="h6 text-muted">Descripcion</h2>
             <p class="mb-0 fw-semibold">Informacion clara de cada caso</p>
         </div>
     </div>
     <div class="col-md-4">
-        <div class="metric-card h-100 p-4">
-            <span class="icono-redondo mb-3">S</span>
+        <div class="admin-stat h-100 p-4">
+            <span class="admin-icon mb-3">S</span>
             <h2 class="h6 text-muted">Sintomas</h2>
             <p class="mb-0 fw-semibold">Senales para consulta clinica</p>
         </div>
     </div>
     <div class="col-md-4">
-        <div class="metric-card h-100 p-4">
-            <span class="icono-redondo mb-3">T</span>
+        <div class="admin-stat h-100 p-4">
+            <span class="admin-icon mb-3">T</span>
             <h2 class="h6 text-muted">Tratamiento</h2>
             <p class="mb-0 fw-semibold">Registro de manejo veterinario</p>
         </div>
@@ -39,8 +40,8 @@
 </section>
 
 {% if enfermedades %}
-    <div class="table-responsive">
-        <table class="table table-hover align-middle">
+    <div class="admin-table table-responsive">
+        <table class="table table-hover align-middle mb-0">
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -56,8 +57,10 @@
                         <td>{{ enfermedad.descripcion|default:"Sin registrar"|truncatechars:60 }}</td>
                         <td>{{ enfermedad.sintomas|default:"Sin registrar"|truncatechars:60 }}</td>
                         <td class="text-end">
-                            <a class="btn btn-sm btn-outline-primary" href="{% url 'editar_enfermedad' enfermedad.id %}">Editar</a>
-                            <a class="btn btn-sm btn-outline-danger" href="{% url 'eliminar_enfermedad' enfermedad.id %}">Eliminar</a>
+                            <div class="admin-actions">
+                                <a class="btn btn-sm btn-outline-primary" href="{% url 'editar_enfermedad' enfermedad.id %}">Editar</a>
+                                <a class="btn btn-sm btn-outline-danger" href="{% url 'eliminar_enfermedad' enfermedad.id %}">Eliminar</a>
+                            </div>
                         </td>
                     </tr>
                 {% endfor %}
@@ -65,8 +68,13 @@
         </table>
     </div>
 {% else %}
-    <div class="alert alert-light border mb-0">
-        Aun no hay enfermedades registradas. Puedes iniciar con el boton Registrar enfermedad.
+    <div class="admin-empty p-4 text-center">
+        <div class="admin-empty-icon">E</div>
+        <h2 class="h5 fw-bold text-dark">No hay enfermedades registradas</h2>
+        <p class="mb-3">
+            El catalogo de enfermedades se mostrara aqui cuando agregues el primer registro.
+        </p>
+        <a class="btn btn-primary" href="{% url 'crear_enfermedad' %}">Registrar primera enfermedad</a>
     </div>
 {% endif %}
 {% endblock %}

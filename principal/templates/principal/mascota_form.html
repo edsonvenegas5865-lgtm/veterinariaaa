@@ -1,10 +1,11 @@
-{% extends 'principal/base.html' %}
+{% extends 'principal/base_admin.html' %}
 
 {% block title %}{% if mascota %}Editar{% else %}Registrar{% endif %} Mascota - Clinica Veterinaria{% endblock %}
+{% block header %}{% if mascota %}Editar mascota{% else %}Registrar mascota{% endif %}{% endblock %}
 
 {% block content %}
-<section class="mb-4">
-    <span class="badge badge-suave rounded-pill px-3 py-2 mb-3">Area privada</span>
+<section class="admin-page-title">
+    <span class="badge admin-pill rounded-pill px-3 py-2 mb-3">Formulario administrativo</span>
     <h1 class="fw-bold mb-2">{% if mascota %}Editar mascota{% else %}Registrar mascota{% endif %}</h1>
     <p class="text-muted mb-0">Completa los datos del paciente y su propietario.</p>
 </section>
@@ -22,9 +23,9 @@
         </div>
     {% endfor %}
 
-    <div class="col-12 d-flex gap-2">
+    <div class="col-12 d-flex flex-wrap gap-2 pt-3 border-top">
         <button type="submit" class="btn btn-primary">Guardar</button>
-        <a href="{% url 'mascotas' %}" class="btn btn-outline-secondary">Cancelar</a>
+        <a href="{% url 'mascotas' %}" class="btn btn-light border">Cancelar</a>
     </div>
 </form>
 {% endblock %}
