@@ -1,14 +1,18 @@
 {% extends 'principal/base.html' %}
 
-{% block title %}Login - Clinica Veterinaria{% endblock %}
+{% block title %}Login - Clinica Patitas{% endblock %}
 
 {% block content %}
-<section class="row justify-content-center">
-    <div class="col-md-7 col-lg-5">
+<section class="row align-items-center g-4">
+    <div class="col-lg-6">
+        <img class="pagina-imagen" src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=900&q=80" alt="Perro mirando con ternura">
+    </div>
+    <div class="col-lg-6">
         <div class="tarjeta-servicio p-4 p-md-5">
-            <h1 class="h3 fw-bold mb-3 text-center">Acceso privado</h1>
-            <p class="text-muted text-center mb-4">
-                Ingresa con tu usuario y contrasena para acceder al sistema.
+            <span class="badge badge-suave rounded-pill px-3 py-2 mb-3">Acceso interno</span>
+            <h1 class="h3 fw-bold mb-3">Ingreso del equipo</h1>
+            <p class="text-muted mb-4">
+                Accede al panel privado para gestionar pacientes, enfermedades y tareas administrativas.
             </p>
 
             {% if form.errors %}

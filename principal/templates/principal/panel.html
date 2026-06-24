@@ -1,40 +1,71 @@
 {% extends 'principal/base.html' %}
 
-{% block title %}Panel Principal - Clinica Veterinaria{% endblock %}
+{% block title %}Panel Principal - Clinica Patitas{% endblock %}
 
 {% block content %}
-<section class="mb-4">
-    <span class="badge badge-suave rounded-pill px-3 py-2 mb-3">Area privada</span>
-    <h1 class="fw-bold mb-2">Panel principal</h1>
-    <p class="lead text-muted mb-0">
-        Bienvenido, {{ request.user.username }}. Desde aqui se gestionaran los
-        modulos internos de la clinica veterinaria.
-    </p>
+<section class="panel-hero p-4 p-md-5 mb-4 d-flex align-items-end">
+    <div>
+        <span class="badge bg-light text-dark rounded-pill px-3 py-2 mb-3">Area privada</span>
+        <h1 class="fw-bold mb-2">Hola, {{ request.user.username }}</h1>
+        <p class="lead mb-0">
+            Gestiona pacientes, enfermedades y tareas administrativas desde un panel claro.
+        </p>
+    </div>
+</section>
+
+<section class="row g-3 mb-4">
+    <div class="col-md-4">
+        <div class="metric-card h-100 p-4">
+            <span class="icono-redondo mb-3">M</span>
+            <h2 class="h6 text-muted">Modulo activo</h2>
+            <p class="h4 fw-bold mb-0">Mascotas</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="metric-card h-100 p-4">
+            <span class="icono-redondo mb-3">E</span>
+            <h2 class="h6 text-muted">Seguimiento</h2>
+            <p class="h4 fw-bold mb-0">Enfermedades</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="metric-card h-100 p-4">
+            <span class="icono-redondo mb-3">A</span>
+            <h2 class="h6 text-muted">Administracion</h2>
+            <p class="h4 fw-bold mb-0">Usuarios</p>
+        </div>
+    </div>
 </section>
 
 <section class="row g-4">
     <div class="col-md-4">
-        <div class="tarjeta-servicio h-100 p-4">
+        <a class="tarjeta-servicio h-100 p-4 d-block text-decoration-none text-reset" href="/admin/auth/user/">
+            <span class="icono-redondo mb-3">U</span>
             <h2 class="h5 fw-semibold">Usuarios</h2>
-            <p class="text-muted mb-0">
-                Administracion de usuarios con acceso al sistema.
+            <p class="text-muted">
+                Administra usuarios, permisos y accesos desde Django Admin.
             </p>
-        </div>
+            <span class="btn btn-sm btn-outline-primary">Abrir admin</span>
+        </a>
     </div>
     <div class="col-md-4">
         <a class="tarjeta-servicio h-100 p-4 d-block text-decoration-none text-reset" href="{% url 'mascotas' %}">
+            <span class="icono-redondo mb-3">P</span>
             <h2 class="h5 fw-semibold">Mascotas</h2>
-            <p class="text-muted mb-0">
-                Registro y consulta de pacientes de la clinica.
+            <p class="text-muted">
+                Registra, edita, consulta y elimina pacientes de la clinica.
             </p>
+            <span class="btn btn-sm btn-outline-primary">Gestionar</span>
         </a>
     </div>
     <div class="col-md-4">
         <a class="tarjeta-servicio h-100 p-4 d-block text-decoration-none text-reset" href="{% url 'enfermedades' %}">
+            <span class="icono-redondo mb-3">C</span>
             <h2 class="h5 fw-semibold">Enfermedades</h2>
-            <p class="text-muted mb-0">
-                Control de enfermedades y seguimiento clinico.
+            <p class="text-muted">
+                Mantiene ordenado el catalogo de enfermedades, sintomas y tratamientos.
             </p>
+            <span class="btn btn-sm btn-outline-primary">Gestionar</span>
         </a>
     </div>
 </section>

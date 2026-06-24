@@ -1,15 +1,15 @@
 {% extends 'principal/base.html' %}
 
-{% block title %}Inicio - Clinica Veterinaria{% endblock %}
+{% block title %}Inicio - Clinica Patitas{% endblock %}
 
 {% block content %}
 <section class="row align-items-center g-4 py-3">
     <div class="col-lg-7">
-        <span class="badge badge-suave rounded-pill px-3 py-2 mb-3">Atencion veterinaria integral</span>
-        <h1 class="display-4 fw-bold mb-3">Cuidamos a tus mascotas como parte de tu familia</h1>
+        <span class="badge badge-suave rounded-pill px-3 py-2 mb-3">Clinica animal friendly</span>
+        <h1 class="display-4 fw-bold mb-3">Cuidado suave, organizado y cercano para cada mascota</h1>
         <p class="lead text-muted mb-4">
-            Una clinica veterinaria moderna, organizada y cercana para acompanarte
-            en cada etapa de la salud de tus mascotas.
+            Un espacio pensado para que perros, gatos y sus familias se sientan
+            acompanados desde la consulta hasta el seguimiento clinico.
         </p>
         <div class="d-flex flex-wrap gap-3">
             <a href="{% url 'contactos' %}" class="btn btn-primary btn-lg">Agendar consulta</a>
@@ -17,20 +17,14 @@
         </div>
     </div>
     <div class="col-lg-5">
-        <div class="bg-light rounded-4 p-4 text-center border">
-            <div class="display-1 mb-3">🐾</div>
-            <h2 class="h4 fw-semibold">Salud, prevencion y seguimiento</h2>
-            <p class="text-muted mb-0">
-                Gestionamos informacion importante para ofrecer una atencion mas clara,
-                ordenada y confiable.
-            </p>
-        </div>
+        <img class="hero-imagen" src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=900&q=80" alt="Perros felices al aire libre">
     </div>
 </section>
 
 <section class="row g-4 mt-5">
     <div class="col-md-4">
         <div class="tarjeta-servicio h-100 p-4">
+            <span class="icono-redondo mb-3">01</span>
             <h2 class="h5 fw-semibold">Atencion medica</h2>
             <p class="mb-0 text-muted">
                 Consultas veterinarias para prevenir, diagnosticar y tratar enfermedades
@@ -40,6 +34,7 @@
     </div>
     <div class="col-md-4">
         <div class="tarjeta-servicio h-100 p-4">
+            <span class="icono-redondo mb-3">02</span>
             <h2 class="h5 fw-semibold">Registro de mascotas</h2>
             <p class="mb-0 text-muted">
                 Gestion organizada de informacion basica de pacientes, propietarios y
@@ -49,6 +44,7 @@
     </div>
     <div class="col-md-4">
         <div class="tarjeta-servicio h-100 p-4">
+            <span class="icono-redondo mb-3">03</span>
             <h2 class="h5 fw-semibold">Seguimiento clinico</h2>
             <p class="mb-0 text-muted">
                 Control de enfermedades y datos importantes para mejorar la continuidad

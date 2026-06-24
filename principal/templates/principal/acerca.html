@@ -1,29 +1,42 @@
 {% extends 'principal/base.html' %}
 
-{% block title %}Acerca de Nosotros - Clinica Veterinaria{% endblock %}
+{% block title %}Acerca de Nosotros - Clinica Patitas{% endblock %}
 
 {% block content %}
-<h1 class="mb-4">Acerca de Nosotros</h1>
-
-<p class="lead text-muted">
-    Somos una clinica veterinaria dedicada al cuidado integral de mascotas,
-    con un servicio responsable, ordenado y cercano para cada familia.
-</p>
-
-<section class="row g-4 mt-3">
-    <div class="col-md-6">
-        <h2 class="h5">Nuestra mision</h2>
-        <p class="text-muted mb-0">
-            Brindar atencion veterinaria de calidad, apoyada en el seguimiento
-            adecuado de cada paciente y en la comunicacion clara con sus propietarios.
+<section class="row align-items-center g-4">
+    <div class="col-lg-6">
+        <span class="badge badge-suave rounded-pill px-3 py-2 mb-3">Nuestro equipo</span>
+        <h1 class="fw-bold mb-3">Una clinica pensada para cuidar con calma y respeto</h1>
+        <p class="lead text-muted">
+            Somos una clinica veterinaria dedicada al cuidado integral de mascotas,
+            con un servicio responsable, ordenado y cercano para cada familia.
         </p>
     </div>
+    <div class="col-lg-6">
+        <img class="pagina-imagen" src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=900&q=80" alt="Veterinaria revisando a un perro">
+    </div>
+</section>
+
+<section class="row g-4 mt-4">
     <div class="col-md-6">
-        <h2 class="h5">Nuestro compromiso</h2>
-        <p class="text-muted mb-0">
-            Promover la salud, prevencion y bienestar animal mediante procesos
-            organizados y un trato respetuoso hacia cada mascota.
-        </p>
+        <div class="tarjeta-servicio h-100 p-4">
+            <span class="icono-redondo mb-3">M</span>
+            <h2 class="h5">Nuestra mision</h2>
+            <p class="text-muted mb-0">
+                Brindar atencion veterinaria de calidad, apoyada en el seguimiento
+                adecuado de cada paciente y en la comunicacion clara con sus propietarios.
+            </p>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="tarjeta-servicio h-100 p-4">
+            <span class="icono-redondo mb-3">C</span>
+            <h2 class="h5">Nuestro compromiso</h2>
+            <p class="text-muted mb-0">
+                Promover la salud, prevencion y bienestar animal mediante procesos
+                organizados y un trato respetuoso hacia cada mascota.
+            </p>
+        </div>
     </div>
 </section>
 {% endblock %}

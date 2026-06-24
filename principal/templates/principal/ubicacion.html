@@ -1,31 +1,40 @@
 {% extends 'principal/base.html' %}
 
-{% block title %}Ubicacion - Clinica Veterinaria{% endblock %}
+{% block title %}Ubicacion - Clinica Patitas{% endblock %}
 
 {% block content %}
-<h1 class="mb-4">Ubicacion</h1>
-
-<p class="lead text-muted">
-    Nuestra clinica veterinaria se encuentra en un punto accesible para brindar
-    atencion oportuna a mascotas y propietarios.
-</p>
-
-<section class="row g-4 mt-3">
-    <div class="col-md-6">
-        <h2 class="h5">Direccion</h2>
-        <p class="text-muted mb-0">
-            Av. Principal y Calle Central, sector urbano.
+<section class="row align-items-center g-4">
+    <div class="col-lg-6">
+        <span class="badge badge-suave rounded-pill px-3 py-2 mb-3">Visitanos</span>
+        <h1 class="fw-bold mb-3">Ubicacion accesible para atencion oportuna</h1>
+        <p class="lead text-muted">
+            Nuestra clinica veterinaria se encuentra en un punto comodo para brindar
+            atencion a mascotas y propietarios.
         </p>
     </div>
-    <div class="col-md-6">
-        <h2 class="h5">Horario de atencion</h2>
-        <p class="text-muted mb-0">
-            Lunes a viernes de 08:00 a 17:00 y sabados de 08:00 a 13:00.
-        </p>
+    <div class="col-lg-6">
+        <img class="pagina-imagen" src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=900&q=80" alt="Perro tranquilo en consulta veterinaria">
     </div>
 </section>
 
-<div class="border rounded bg-light text-center text-muted p-5 mt-4">
-    Mapa de ubicacion de la clinica veterinaria
-</div>
+<section class="row g-4 mt-4">
+    <div class="col-md-6">
+        <div class="tarjeta-servicio h-100 p-4">
+            <span class="icono-redondo mb-3">D</span>
+            <h2 class="h5">Direccion</h2>
+            <p class="text-muted mb-0">
+                Av. Principal y Calle Central, sector urbano.
+            </p>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="tarjeta-servicio h-100 p-4">
+            <span class="icono-redondo mb-3">H</span>
+            <h2 class="h5">Horario de atencion</h2>
+            <p class="text-muted mb-0">
+                Lunes a viernes de 08:00 a 17:00 y sabados de 08:00 a 13:00.
+            </p>
+        </div>
+    </div>
+</section>
 {% endblock %}

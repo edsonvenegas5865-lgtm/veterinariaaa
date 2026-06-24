@@ -1,30 +1,40 @@
 {% extends 'principal/base.html' %}
 
-{% block title %}Contactos - Clinica Veterinaria{% endblock %}
+{% block title %}Contactos - Clinica Patitas{% endblock %}
 
 {% block content %}
-<h1 class="mb-4">Contactos</h1>
+<section class="row align-items-center g-4">
+    <div class="col-lg-6">
+        <span class="badge badge-suave rounded-pill px-3 py-2 mb-3">Hablemos</span>
+        <h1 class="fw-bold mb-3">Agenda y consulta con un equipo cercano</h1>
+        <p class="lead text-muted">
+            Estamos disponibles para atender consultas, agendar citas y brindar informacion
+            sobre nuestros servicios veterinarios.
+        </p>
+    </div>
+    <div class="col-lg-6">
+        <img class="pagina-imagen" src="https://images.unsplash.com/photo-1601758063541-d2f50b4aafb2?auto=format&fit=crop&w=900&q=80" alt="Persona abrazando a su perro">
+    </div>
+</section>
 
-<p class="lead text-muted">
-    Estamos disponibles para atender consultas, agendar citas y brindar informacion
-    sobre nuestros servicios veterinarios.
-</p>
-
-<section class="row g-4 mt-3">
+<section class="row g-4 mt-4">
     <div class="col-md-4">
-        <div class="h-100 border rounded p-4">
+        <div class="tarjeta-servicio h-100 p-4">
+            <span class="icono-redondo mb-3">T</span>
             <h2 class="h5">Telefono</h2>
             <p class="mb-0 text-muted">099 999 9999</p>
         </div>
     </div>
     <div class="col-md-4">
-        <div class="h-100 border rounded p-4">
+        <div class="tarjeta-servicio h-100 p-4">
+            <span class="icono-redondo mb-3">C</span>
             <h2 class="h5">Correo electronico</h2>
-            <p class="mb-0 text-muted">contacto@clinicaveterinaria.com</p>
+            <p class="mb-0 text-muted">contacto@clinicapatitas.com</p>
         </div>
     </div>
     <div class="col-md-4">
-        <div class="h-100 border rounded p-4">
+        <div class="tarjeta-servicio h-100 p-4">
+            <span class="icono-redondo mb-3">A</span>
             <h2 class="h5">Atencion</h2>
             <p class="mb-0 text-muted">Lunes a sabado en horario laboral.</p>
         </div>

@@ -14,6 +14,30 @@
     </div>
 </section>
 
+<section class="row g-3 mb-4">
+    <div class="col-md-4">
+        <div class="metric-card h-100 p-4">
+            <span class="icono-redondo mb-3">D</span>
+            <h2 class="h6 text-muted">Descripcion</h2>
+            <p class="mb-0 fw-semibold">Informacion clara de cada caso</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="metric-card h-100 p-4">
+            <span class="icono-redondo mb-3">S</span>
+            <h2 class="h6 text-muted">Sintomas</h2>
+            <p class="mb-0 fw-semibold">Senales para consulta clinica</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="metric-card h-100 p-4">
+            <span class="icono-redondo mb-3">T</span>
+            <h2 class="h6 text-muted">Tratamiento</h2>
+            <p class="mb-0 fw-semibold">Registro de manejo veterinario</p>
+        </div>
+    </div>
+</section>
+
 {% if enfermedades %}
     <div class="table-responsive">
         <table class="table table-hover align-middle">
@@ -41,8 +65,8 @@
         </table>
     </div>
 {% else %}
-    <div class="alert alert-info mb-0">
-        Aun no hay enfermedades registradas.
+    <div class="alert alert-light border mb-0">
+        Aun no hay enfermedades registradas. Puedes iniciar con el boton Registrar enfermedad.
     </div>
 {% endif %}
 {% endblock %}
